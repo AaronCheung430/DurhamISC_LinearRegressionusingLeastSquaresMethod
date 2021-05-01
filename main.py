@@ -9,9 +9,9 @@
 # import os
 # import time
 # import csv
-# from util import config as cfg
-# from util import start as strt
-# from util.adj_list import open_csv_file, output_adj_list_table
+from util import config as cfg
+from util import start as strt
+
 # import numpy
 # import pandas
 # import matplotlib.pyplot as plt
@@ -41,20 +41,13 @@ def main():
             # output_adj = output_adj_list_table(adjac_list)
             # print(output_adj)
 
-
         elif option == 3: # find MST using kruskal's algorithm
             print("option 3")
 
         elif option == 4: # find MST using prim's algorithm
             print("option 4")
 
-        elif option == 5: # Create graph of monthly sales
-            print("option 5")
-
-        elif option == 6: # Create graph of monthly sales
-            print("option 6")
-
-        else: # option 7 - exit in controlled manner
+        else: # option 5 - exit in controlled manner
 
             # set end_program Boolean to True
             end_program = True
