@@ -38,8 +38,6 @@ def main():
 
         elif option == 2: # output the adjacency list as a table
             print("option 2")
-            # output_adj = output_adj_list_table(adjac_list)
-            # print(output_adj)
 
         elif option == 3: # find MST using kruskal's algorithm
             print("option 3")

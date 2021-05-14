@@ -4,9 +4,6 @@
 import os
 from time import sleep
 
-# the text of numbers in English
-# EngNum = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth"]
-
 # set up the lists for the menu options
 menu_options = ["Import a list of x and y values from a csv file", "Calculate the linear regression line", "Calculate the correlation coefficient", "Plot a scatter graph", "Quit the Program"]
 
