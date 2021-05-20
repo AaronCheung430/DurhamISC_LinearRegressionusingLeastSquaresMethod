@@ -30,6 +30,8 @@ def main():
         option = strt.menu()
 
         if option == 1: # import a graph from csv
+            cfg.clear_screen()
+            print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             # adjac_list = open_csv_file(cfg.read_file_path)
             # cfg.clear_screen()
             # cfg.time_animation(3, "CSV file imported successfully.")
@@ -37,12 +39,18 @@ def main():
             print("option 1")
 
         elif option == 2: # output the adjacency list as a table
+            cfg.clear_screen()
+            print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 2")
 
         elif option == 3: # find MST using kruskal's algorithm
+            cfg.clear_screen()
+            print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 3")
 
         elif option == 4: # find MST using prim's algorithm
+            cfg.clear_screen()
+            print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 4")
 
         else: # option 5 - exit in controlled manner
