@@ -11,7 +11,6 @@
 # import csv
 from util import config as cfg
 from util import start as strt
-
 # import numpy
 # import pandas
 # import matplotlib.pyplot as plt
