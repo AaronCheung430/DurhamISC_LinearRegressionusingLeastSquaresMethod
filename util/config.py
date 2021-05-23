@@ -3,6 +3,8 @@
 
 import os
 from time import sleep
+import pandas as pd
+import numpy as np
 
 # set up the lists for the menu options
 menu_options = ["Import a list of x and y values from a csv file", "Calculate the linear regression line", "Calculate the correlation coefficient", "Plot a scatter graph", "Quit the Program"]
@@ -12,7 +14,7 @@ valueError_message = "Oops! That was a text. Please try again with a valid numbe
 welcome_message = "Welcome to the Linear Regression using Least Squares Method. \nPlease type the number below."
 invalid_message = ""
 
-read_file_path = "data/test_data.csv" # file path for file to be read
+default_read_file_path = "data/test_data.csv" # file path for file to be read
 
 # to check which operation system is the user running this program on and clear the screen in the cell prompt
 def clear_screen():
