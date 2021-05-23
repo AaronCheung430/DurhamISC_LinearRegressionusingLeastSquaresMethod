@@ -6,9 +6,6 @@
 # CLASS CODE: SFSCS_PT
 
 # ------------------------------- Imported Packages -------------------------------
-# import os
-# import time
-# import csv
 from util import config as cfg
 from util import start as strt
 # import numpy
@@ -27,7 +24,7 @@ def main():
         # call menu function and get user's choice
         option = strt.menu()
 
-        if option == 1: # import a graph from csv
+        if option == 1: # import a x, y values from csv
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             # adjac_list = open_csv_file(cfg.read_file_path)
@@ -36,25 +33,24 @@ def main():
             # cfg.countdown(4)
             print("option 1")
 
-        elif option == 2: # output the adjacency list as a table
+        elif option == 2: # calcuate and display the linear regression line
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 2")
 
-        elif option == 3: # find MST using kruskal's algorithm
+        elif option == 3: # calcuate and display the correlation coefficient
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 3")
 
-        elif option == 4: # find MST using prim's algorithm
+        elif option == 4: # plot scatter graph
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
             print("option 4")
 
         else: # option 5 - exit in controlled manner
 
-            # set end_program Boolean to True
-            end_program = True
+            end_program = True  # set end_program Boolean to True
 
             # output messages to user
             print("Thank you for using this program")

@@ -1,7 +1,6 @@
 # menu.py
-# functions for menu() and restart() after iterate once in the main loop
+# menu() functions for main program and allow user to enter choice
 
-import os
 import util.config as cfg
 
 
@@ -9,7 +8,7 @@ def menu():
 
     option = -1 # used to store the user's choice
 
-	# while option is less than 1 or greater than 7, loop
+	# while option is less than 1 or greater than 5, loop
 	# used to validate user input
     while option < 1 or option > len(cfg.menu_options):
 
@@ -30,7 +29,7 @@ def menu():
 
             # check if option is not 7 and update the variable
             if option < 1 or option > len(cfg.menu_options):
-                cfg.invalid_message = "\nPlease trying again by entering a number between 1-7. \n"
+                cfg.invalid_message = f"\nPlease trying again by entering a number between 1-{len(cfg.menu_options)}. \n"
 
         except ValueError:
             cfg.invalid_message = f"\n{cfg.valueError_message}"
