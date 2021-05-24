@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 
 x_values = np.array([0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4,  0.35, 0.3])
 y_values = np.array([37.16, 36.2, 34.96, 33.93, 32.82, 31.38, 30., 28.76, 27.32, 25.66, 24.09, 22.24])
+b_m = np.array([14.9031352, 26.91048951])
+r_2 = 0.993418067
 
 # function which will open the csv file and read in its values and return
 def import_csv(file_path):
@@ -19,21 +21,30 @@ def import_csv(file_path):
     return x_values, y_values	# return numpy arrays
 
 
-def plot_graph(x_values, y_values):
+def plot_graph(x_values, y_values, b_m, r_2):
 
-    plt.scatter(x_values, y_values)
-    plt.title("Linear Regression Line")
+    plt.scatter(x_values, y_values, label="Sample data")
+
+    yhat = np.array(b_m[1] * x_values + b_m[0])
+    plt.plot(x_values, yhat, 'r', label=f'y={b_m[1]:6.5e}x+{b_m[0]:6.5e}')
 
     # show graph and save figure
-    # plt.tight_layout()
-    # plt.savefig('data/comparison_algorithms.png')
+    plt.xlabel("X")   # set the graph attributes
+    plt.ylabel("Y")
+    plt.title(f"Linear Regression using Least Squares Method (R\u00b2 = {r_2:6.5e})")
+    plt.tight_layout()
+    # plt.savefig('data/linear_regression.png')
+    plt.text(2, 6, "hello", fontsize=15)
+    plt.legend(loc='upper left')
+    plt.grid()
     plt.show()
     plt.ion()
 
     input("\nEnter to return to menu...")   # pause the program to show graph
     plt.close('all')
 
-    pass
 
 
-plot_graph(x_values, y_values)
+
+# plot_graph(x_values, y_values, b_m, r_2)
+

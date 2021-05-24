@@ -1,3 +1,6 @@
+# Created by 2595161_qwwk95 from Durham University Interntaional Study Centre
+# Last editied on 2021/05/20 18:00 GMT
+# Copyright © 2021 2595161_qwwk95. All rights reserved.
 # DUISC IFY Programming Techniques
 # Summative 2 - Linear Regression using Least Squares Method
 
@@ -9,12 +12,14 @@
 from util import config as cfg
 from util import start as strt
 from util import import_data, calculation
+import numpy as np
 
 # ---------------------------------- Main Program ---------------------------------
 
 def main():
 
     end_program = False # variable used to check if user wants to exit program
+    x_values, y_values, b_m, r_2 = np.array([]), np.array([]), np.array([]), 0 # set up variable to None
 
     # loop until end_program is True
     while not end_program:
@@ -48,20 +53,45 @@ def main():
         elif option == 2: # calcuate and display the linear regression line
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
+            if (x_values.size and y_values.size) == 0:    # check is variable empy
+                cfg.check_values()
+                print("None")
+                continue
+
             b_m = calculation.find_linear_regress(x_values, y_values)
             print("The y-intercept is", b_m[0])
             print("The gradient ", b_m[1])
-            print(f"The least squares regression line of this set of data is approximately Y = {b_m[1]:.2f}x + {b_m[0]:.2f}")
+            print(f"The least squares regression line of this set of data is approximately Y = {b_m[1]:6.5e}x + {b_m[0]:6.5e}")
+            input("\nEnter to return to menu...") # pause the program
 
         elif option == 3: # calcuate and display the correlation coefficient
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
-            print("option 3")
+            if (x_values.size and y_values.size) == 0:    # check is variable empy
+                cfg.check_values()
+                continue
+            elif b_m.size == 0:
+                cfg.check_values(f"'[2] {cfg.menu_options[1]}' to find the equation", "equation")
+                continue
+
+            r_2 = calculation.find_corr_coeff(x_values, y_values, b_m)
+            print(f"The correlation coefficient of this set of data is approximately R\u00b2 = {r_2:6.5e}")
+            input("\nEnter to return to menu...") # pause the program
 
         elif option == 4: # plot scatter graph
             cfg.clear_screen()
             print(f"You have chosen [{option}] {cfg.menu_options[option-1]}. \n")
-            print("option 4")
+            if (x_values.size and y_values.size) == 0:    # check is variable empy
+                cfg.check_values()
+                continue
+            elif b_m.size == 0:
+                cfg.check_values(f"'[2] {cfg.menu_options[1]}' to find the equation", "equation")
+                continue
+            elif r_2 == 0:
+                cfg.check_values(f"'[3] {cfg.menu_options[2]}' to find the correlation coefficient", "correlation coefficient")
+                continue
+
+            import_data.plot_graph(x_values, y_values, b_m, r_2)
 
         else: # option 5 - exit in controlled manner
 
@@ -70,6 +100,8 @@ def main():
             # output messages to user
             print("Thank you for using this program")
             print("Quitting Program...")
+
+        cfg.invalid_message = ""    # reset variable, to avoid invalid message to be shown in the next loop
 
         #### END OF MAIN PROGRAM
 

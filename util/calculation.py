@@ -19,13 +19,8 @@ def find_linear_regress(x_values, y_values):
 
     x_T_x_inv = np.array(inverse_matrix(x_T_x.tolist()))
 
-    b_m = x_T_x_inv.dot(x_T_y)
+    b_m = x_T_x_inv.dot(x_T_y)  #
 
-    # print("hiii")
-    # print(b_m)
-    # print("The y-intercept is", b_m[0])
-    # print("The gradient ", b_m[1])
-    # print(f"The least squares regression line of this set of data is Y = {b_m[1]:.2f}x + {b_m[0]:.2f}")
 
     return b_m
 
@@ -56,17 +51,17 @@ def inverse_matrix(normal_matrix):
 
 def find_corr_coeff(x_values, y_values, b_m):
 
-    e_values = np.array([y_values[i] - (b_m[1] * x_values[i] + b_m[0]) for i in range(len(x_values))])
+    e_values = np.array([y_values[i] - (b_m[1] * x_values[i] + b_m[0]) for i in range(len(x_values))])  # find matrix E
+    sse = e_values.transpose().dot(e_values)    # find the sum of squares error
 
-    sse = e_values.transpose().dot(e_values)
+    sst = np.sum((y_values - np.mean(y_values)) ** 2)   # find the sum of squares total
+    ssr = sst - sse # find the sum of squares regression
+    r_2 = ssr / sst # find the r^2 value
 
-    print(e_values)
-    print(sse)
-
-
-
-
+    return r_2
 
 
-find_corr_coeff(x_values, y_values, b_m)
+
+# find_corr_coeff(x_values, y_values, b_m)
+
 
