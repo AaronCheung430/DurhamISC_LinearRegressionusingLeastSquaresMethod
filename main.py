@@ -58,10 +58,10 @@ def main():
                 print("None")
                 continue
 
-            b_m = calculation.find_linear_regress(x_values, y_values)
-            print("The y-intercept is", b_m[0])
-            print("The gradient ", b_m[1])
-            print(f"The least squares regression line of this set of data is approximately Y = {b_m[1]:6.5e}x + {b_m[0]:6.5e}")
+            b_m, verify_b_m = calculation.find_linear_regress(x_values, y_values)
+            print(f"The y-intercept is {b_m[0]} \nThe gradient is {b_m[1]}")
+            print(f"The least squares regression line of this set of data is approximately Y = {b_m[1]:6.5e}x + {b_m[0]:6.5e} \n")
+            print(f"Calculation using numpy - Verification \nThe y-intercept is {verify_b_m[0]} \nThe gradient is {verify_b_m[1]}.")
             input("\nEnter to return to menu...") # pause the program
 
         elif option == 3: # calcuate and display the correlation coefficient
@@ -74,8 +74,9 @@ def main():
                 cfg.check_values(f"'[2] {cfg.menu_options[1]}' to find the equation", "equation")
                 continue
 
-            r_2 = calculation.find_corr_coeff(x_values, y_values, b_m)
-            print(f"The correlation coefficient of this set of data is approximately R\u00b2 = {r_2:6.5e}")
+            r_2, verify_r_2 = calculation.find_corr_coeff(x_values, y_values, b_m)
+            print(f"The correlation coefficient of this set of data is approximately R\u00b2 = {r_2:6.5e} \n")
+            print(f"Calculation using numpy - Verification \nThe correlation coefficient of this set of data is approximately R\u00b2 = {verify_r_2:6.5e}")
             input("\nEnter to return to menu...") # pause the program
 
         elif option == 4: # plot scatter graph
