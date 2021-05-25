@@ -12,7 +12,6 @@ menu_options = ["Import a list of x and y values from a csv file", "Calculate th
 valueError_message = "Oops! That was a text. Please try again with a valid number... \n"
 welcome_message = "Welcome to the Linear Regression using Least Squares Method. \nPlease type the number below."
 invalid_message = ""
-significant_digits = 4
 
 default_read_file_path = "data/test_data.csv" # file path for file to be read
 
