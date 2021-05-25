@@ -5,11 +5,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-x_values = np.array([0.85, 0.8, 0.75, 0.7, 0.65, 0.6, 0.55, 0.5, 0.45, 0.4,  0.35, 0.3])
-y_values = np.array([37.16, 36.2, 34.96, 33.93, 32.82, 31.38, 30., 28.76, 27.32, 25.66, 24.09, 22.24])
-b_m = np.array([14.9031352, 26.91048951])
-r_2 = 0.993418067
-
 # function which will open the csv file and read in its values and return
 def import_csv(file_path):
 
