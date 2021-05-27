@@ -1,12 +1,8 @@
-# Created by 2595161_qwwk95 from Durham University Interntaional Study Centre
+# Created by Aaron Cheung from Durham University Interntaional Study Centre
 # Last editied on 2021/05/27 18:00 GMT
-# Copyright © 2021 2595161_qwwk95. All rights reserved.
+# Copyright © 2021 Aaron Cheung. All rights reserved.
 # DUISC IFY Programming Techniques
 # Summative 2 - Linear Regression using Least Squares Method
-
-# Student No: 2595161
-# DUID: qwwk95
-# CLASS CODE: SFSCS_PT
 
 # ------------------------------- Imported Packages -------------------------------
 from util import config as cfg
